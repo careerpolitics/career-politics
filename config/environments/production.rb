@@ -74,7 +74,7 @@ Rails.application.configure do
   redis_url = ENV.fetch("REDISCLOUD_URL", nil)
   redis_url ||= ENV.fetch("REDIS_URL", nil)
   default_expiration = 24.hours.to_i
-  config.cache_store = :redis_cache_store, { url: redis_url, expires_in: default_expiration, ssl_params: { verify_mode: OpenSSL::SSL::VERIFY_NONE }}
+  config.cache_store = :redis_cache_store, { url: redis_url, expires_in: default_expiration}
 
   config.action_mailer.perform_caching = false
 
